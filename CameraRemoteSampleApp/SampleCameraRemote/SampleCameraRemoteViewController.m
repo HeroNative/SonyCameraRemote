@@ -28,6 +28,17 @@
     NSMutableArray *_modeArray;
     UIImageView *_liveViewImageView;
     UIImageView *_takePictureImageView;
+    NSInteger _pressedOverlayButtonNumber; //0->none, 1->front, 2->left, 3->right, default 0
+    NSInteger _oldOverlayButtonNumber;
+    UIImageView *_frontOverlayImageView;
+    UIImageView *_leftOverlayImageView;
+    UIImageView *_rightOverlayImageView;
+    UIImage *_frontOverlayImage;
+    UIImage *_leftOverlayImage;
+    UIImage *_rightOverlayImage;
+    
+    int secondCounts;
+    NSTimer *countDownTimer;
 }
 
 @synthesize modeButtonText;
@@ -37,10 +48,32 @@
 @synthesize zoomInButton;
 @synthesize zoomOutButton;
 
+- (void) timerRun
+{
+    secondCounts = secondCounts - 1;
+    NSString *timerOutput = [NSString stringWithFormat:@"%d", secondCounts];
+    _timerOut.text = timerOutput;
+    
+    if (secondCounts == 0){
+        [countDownTimer invalidate];
+        countDownTimer = nil;
+        _timerBg.hidden = YES;
+    }
+}
+- (void) startTimer
+{
+    _timerBg.hidden = NO;
+    secondCounts = 5;
+    countDownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerRun) userInfo:nil repeats:YES];
+    [self recordMovie];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    _pressedOverlayButtonNumber = 0;
+    _oldOverlayButtonNumber = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -109,6 +142,15 @@
     pickerTapGesture.numberOfTouchesRequired = 1;
     pickerTapGesture.delegate = self;
 
+    //added
+    _frontOverlayImage = [UIImage imageNamed:@"front.png"];
+    _leftOverlayImage = [UIImage imageNamed:@"left.png"];
+    _rightOverlayImage = [UIImage imageNamed:@"right.png"];
+    
+    _frontOverlayImageView = [[UIImageView alloc] initWithImage:_frontOverlayImage];
+    _leftOverlayImageView = [[UIImageView alloc] initWithImage:_leftOverlayImage];
+    _rightOverlayImageView = [[UIImageView alloc] initWithImage:_rightOverlayImage];
+    
     [self setButtonView:zoomInButton];
     [self setButtonView:zoomOutButton];
 }
@@ -577,6 +619,11 @@ numberOfRowsInComponent:(NSInteger)component
     [self openNetworkErrorDialog];
 }
 
+- (void)overlayShapeInImageView:(NSInteger) pressedNumber
+{
+    
+}
+
 /**
  * SampleStreamingDataDelegate implementation
  */
@@ -596,7 +643,26 @@ numberOfRowsInComponent:(NSInteger)component
     [_liveViewImageView setCenter:imgCenter];
     [_liveViewImageView setImage:scaledImage];
     scaledImage = NULL;
+    
+    if (_pressedOverlayButtonNumber == _oldOverlayButtonNumber){
+        return;
+    }
+    _oldOverlayButtonNumber = _pressedOverlayButtonNumber;
+    [_frontOverlayImageView removeFromSuperview];
+    [_leftOverlayImageView removeFromSuperview];
+    [_rightOverlayImageView removeFromSuperview];
+    if (_pressedOverlayButtonNumber == 1){
+        [_liveViewImageView addSubview:_frontOverlayImageView];
+    }else if (_pressedOverlayButtonNumber == 2){
+        [_liveViewImageView addSubview:_leftOverlayImageView];
+    }else if (_pressedOverlayButtonNumber == 3){
+        [_liveViewImageView addSubview:_rightOverlayImageView];
+    }else
+        return;
+    
 }
+
+
 
 - (void)didStreamingStopped
 {
@@ -990,6 +1056,19 @@ numberOfRowsInComponent:(NSInteger)component
 }
 
 /*
+ * Parser of Camera Start Movie Rec
+ */
+- (void)parseCameraStartMovieRec:(NSArray *)resultArray
+                        errorCode:(NSInteger)errorCode
+                     errorMessage:(NSString *)errorMessage
+{
+    NSLog(@"SampleCameraRemoteViewController parseCameraStartMovieRec");
+    if (resultArray.count > 0 && errorCode < 0) {
+        // will added: 2017-10-21-04-18
+    }
+}
+
+/*
  * Delegate parser implementation for WebAPI requests
  */
 - (void)parseMessage:(NSData *)response apiName:(NSString *)apiName
@@ -1072,7 +1151,9 @@ numberOfRowsInComponent:(NSInteger)component
                         errorCode:errorCode
                      errorMessage:errorMessage];
     } else if ([apiName isEqualToString:API_CAMERA_startMovieRec]) {
-
+        [self parseCameraStartMovieRec:resultsArray
+                              errorCode:errorCode
+                           errorMessage:errorMessage];
     } else if ([apiName isEqualToString:API_CAMERA_stopMovieRec]) {
 
     } else if ([apiName isEqualToString:API_CAMERA_getMethodTypes]) {
@@ -1153,5 +1234,35 @@ numberOfRowsInComponent:(NSInteger)component
 - (BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+- (IBAction)didTapRight:(UIButton *)sender {
+    if (_pressedOverlayButtonNumber == 3)
+        _pressedOverlayButtonNumber = 0;
+    else
+        _pressedOverlayButtonNumber = 3;
+}
+
+- (IBAction)didTapRecord:(id)sender {
+    [self startTimer];
+}
+
+- (IBAction)didTapLeft:(UIButton *)sender {
+    if (_pressedOverlayButtonNumber == 2)
+        _pressedOverlayButtonNumber = 0;
+    else
+        _pressedOverlayButtonNumber = 2;
+}
+
+- (IBAction)didTapFront:(UIButton *)sender{
+    if (_pressedOverlayButtonNumber == 1)
+        _pressedOverlayButtonNumber = 0;
+    else
+        _pressedOverlayButtonNumber = 1;
+}
+
+- (void) recordMovie
+{
+    [SampleCameraApi startMovieRec:self];
 }
 @end

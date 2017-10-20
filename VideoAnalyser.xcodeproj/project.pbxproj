@@ -54,7 +54,7 @@
 		432620A319ADB4A400600449 /* SampleGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleGalleryViewController.m; path = SampleCameraRemote/SampleGalleryViewController.m; sourceTree = "<group>"; };
 		432620A419ADB4A400600449 /* SampleStreamingDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleStreamingDataManager.h; path = SampleCameraRemote/SampleStreamingDataManager.h; sourceTree = "<group>"; };
 		432620A519ADB4A400600449 /* SampleStreamingDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleStreamingDataManager.m; path = SampleCameraRemote/SampleStreamingDataManager.m; sourceTree = "<group>"; };
-		432620BE19ADB50600600449 /* CameraRemoteSampleApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CameraRemoteSampleApp-Prefix.pch"; sourceTree = "<group>"; };
+		432620BE19ADB50600600449 /* VideoAnalyser-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VideoAnalyser-Prefix.pch"; sourceTree = "<group>"; };
 		432620C119ADB5A600600449 /* SampleDeviceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleDeviceListViewController.h; path = CameraRemoteSampleApp/SampleDeviceListViewController.h; sourceTree = "<group>"; };
 		432620C219ADB5A600600449 /* SampleDeviceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleDeviceListViewController.m; path = CameraRemoteSampleApp/SampleDeviceListViewController.m; sourceTree = "<group>"; };
 		432620C419ADB5B100600449 /* SampleAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleAppDelegate.h; path = CameraRemoteSampleApp/SampleAppDelegate.h; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		432620CA19ADB5D900600449 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CameraRemoteSampleApp/Images.xcassets; sourceTree = "<group>"; };
 		432620CF19ADBB9800600449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		432620D119ADBB9800600449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		432620D419ADBC1900600449 /* CameraRemoteSampleApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CameraRemoteSampleApp-Info.plist"; sourceTree = "<group>"; };
+		432620D419ADBC1900600449 /* VideoAnalyser-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VideoAnalyser-Info.plist"; sourceTree = "<group>"; };
 		432620D519ADBC1900600449 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		432620D919ADBC3D00600449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CameraRemoteSampleApp/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		432620DB19ADBC3D00600449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CameraRemoteSampleApp/Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		43F459E019ADC7FC00355CB1 /* SampleCameraApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCameraApi.h; sourceTree = "<group>"; };
 		43F459E119ADC7FC00355CB1 /* SampleCameraApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCameraApi.m; sourceTree = "<group>"; };
 		CA18140618515B510063867D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CAAA9942182B19CB00A97D09 /* CameraRemoteSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraRemoteSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAAA9942182B19CB00A97D09 /* VideoAnalyser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoAnalyser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAAA9945182B19CB00A97D09 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CAAA9947182B19CB00A97D09 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CAAA9949182B19CB00A97D09 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -146,7 +146,7 @@
 		CAAA9943182B19CB00A97D09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAAA9942182B19CB00A97D09 /* CameraRemoteSampleApp.app */,
+				CAAA9942182B19CB00A97D09 /* VideoAnalyser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 		CAAA994B182B19CB00A97D09 /* CameraRemoteSampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				432620BE19ADB50600600449 /* CameraRemoteSampleApp-Prefix.pch */,
+				432620BE19ADB50600600449 /* VideoAnalyser-Prefix.pch */,
 				CAAA9987182B2BE700A97D09 /* DeviceDiscovery */,
 				CAAA997D182B1F3F00A97D09 /* SampleCameraRemote */,
 				CAAA994C182B19CB00A97D09 /* Supporting Files */,
@@ -180,7 +180,7 @@
 				432620CE19ADBB9800600449 /* InfoPlist.strings */,
 				432620D019ADBB9800600449 /* Localizable.strings */,
 				432620D519ADBC1900600449 /* main.m */,
-				432620D419ADBC1900600449 /* CameraRemoteSampleApp-Info.plist */,
+				432620D419ADBC1900600449 /* VideoAnalyser-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CAAA9941182B19CB00A97D09 /* CameraRemoteSampleApp */ = {
+		CAAA9941182B19CB00A97D09 /* VideoAnalyser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAAA9977182B19CB00A97D09 /* Build configuration list for PBXNativeTarget "CameraRemoteSampleApp" */;
+			buildConfigurationList = CAAA9977182B19CB00A97D09 /* Build configuration list for PBXNativeTarget "VideoAnalyser" */;
 			buildPhases = (
 				CAAA993E182B19CB00A97D09 /* Sources */,
 				CAAA993F182B19CB00A97D09 /* Frameworks */,
@@ -235,9 +235,9 @@
 			);
 			dependencies = (
 			);
-			name = CameraRemoteSampleApp;
+			name = VideoAnalyser;
 			productName = CameraRemoteSampleApp;
-			productReference = CAAA9942182B19CB00A97D09 /* CameraRemoteSampleApp.app */;
+			productReference = CAAA9942182B19CB00A97D09 /* VideoAnalyser.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +256,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CAAA993D182B19CB00A97D09 /* Build configuration list for PBXProject "CameraRemoteSampleApp" */;
+			buildConfigurationList = CAAA993D182B19CB00A97D09 /* Build configuration list for PBXProject "VideoAnalyser" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,7 +269,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAAA9941182B19CB00A97D09 /* CameraRemoteSampleApp */,
+				CAAA9941182B19CB00A97D09 /* VideoAnalyser */,
 			);
 		};
 /* End PBXProject section */
@@ -445,17 +445,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JFH2EVWP3B;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CameraRemoteSampleApp/CameraRemoteSampleApp-Prefix.pch";
-				INFOPLIST_FILE = "CameraRemoteSampleApp/CameraRemoteSampleApp-Info.plist";
+				GCC_PREFIX_HEADER = "CameraRemoteSampleApp/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "CameraRemoteSampleApp/VideoAnalyser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camera.test1;
-				PRODUCT_NAME = CameraRemoteSampleApp;
+				PRODUCT_NAME = VideoAnalyser;
 				PROVISIONING_PROFILE = "ce622fbe-c701-4fef-9acb-1d04ae3cac52";
 				PROVISIONING_PROFILE_SPECIFIER = AllPro_20171017;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -468,19 +468,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JFH2EVWP3B;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CameraRemoteSampleApp/CameraRemoteSampleApp-Prefix.pch";
-				INFOPLIST_FILE = "CameraRemoteSampleApp/CameraRemoteSampleApp-Info.plist";
+				GCC_PREFIX_HEADER = "CameraRemoteSampleApp/VideoAnalyser-Prefix.pch";
+				INFOPLIST_FILE = "CameraRemoteSampleApp/VideoAnalyser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.camera.test1;
-				PRODUCT_NAME = CameraRemoteSampleApp;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PRODUCT_NAME = VideoAnalyser;
+				PROVISIONING_PROFILE = "ce622fbe-c701-4fef-9acb-1d04ae3cac52";
+				PROVISIONING_PROFILE_SPECIFIER = AllPro_20171017;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -489,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CAAA993D182B19CB00A97D09 /* Build configuration list for PBXProject "CameraRemoteSampleApp" */ = {
+		CAAA993D182B19CB00A97D09 /* Build configuration list for PBXProject "VideoAnalyser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAAA9975182B19CB00A97D09 /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAAA9977182B19CB00A97D09 /* Build configuration list for PBXNativeTarget "CameraRemoteSampleApp" */ = {
+		CAAA9977182B19CB00A97D09 /* Build configuration list for PBXNativeTarget "VideoAnalyser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAAA9978182B19CB00A97D09 /* Debug */,
